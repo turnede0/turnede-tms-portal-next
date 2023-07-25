@@ -1,10 +1,11 @@
 "use client";
-import SignIn from "@src/components/SignIn";
+// import SignIn from "@src/components/SignIn";
 
 export default function Home() {
   return (
     <main>
-      <SignIn />
+      alex check problem
+      {/* <SignIn /> */}
     </main>
   );
 }
