@@ -6,6 +6,7 @@ import { createTranslator, NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import "@src/app/[locale]/globals.css";
+import Providers from "@src/util/provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -49,9 +50,7 @@ export default async function LocaleLayout({
           // suppressHydrationWarning={true}
         >
           <NextIntlClientProvider locale={locale} messages={messages}>
-            {/* <Navbar /> */}
-            {children}
-            {/* <Footer /> */}
+            <Providers>{children}</Providers>
           </NextIntlClientProvider>
         </body>
       </html>

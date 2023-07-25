@@ -14,7 +14,7 @@ const Calendar = () => {
     <PageLayout>
       {" "}
       <div>
-        <h1>Demo App</h1>
+        <h1>Calendar</h1>
         {isSuccess && (
           <FullCalendar
             editable

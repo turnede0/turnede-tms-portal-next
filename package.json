@@ -24,6 +24,8 @@
     "@next/font": "^13.4.12",
     "@react-icons/all-files": "^4.1.0",
     "@tanstack/react-query": "^4.32.0",
+    "@tanstack/react-query-devtools": "^4.32.0",
+    "@tanstack/react-query-next-experimental": "^5.0.0-alpha.80",
     "@types/node": "20.4.4",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
