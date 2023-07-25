@@ -1,0 +1,342 @@
+[
+  {
+    "id": 1,
+    "info": {
+      "name": "Jon Snow",
+      "identity": "F213451(1)",
+      "phone1": "6651215454",
+      "phone2": "23347923",
+      "whatsapp": "6651215454",
+      "email": "jonsnow@gmail.com",
+      "address": "Unit 702, 7/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": " oxford primary school"
+        },
+        {
+          "period": "2016-2022",
+          "name": "bachelor of science"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "HSBC",
+      "bankaccountNo": "498-231245-321"
+    },
+    "employee_status": "part-time",
+    "status": "active",
+    "jobs": 5,
+    "work_hour": 50,
+    "description": "he is a goog boy",
+    "remark": "no work on wednesday",
+    "preference": ["biology", "math"],
+    "tag": ["biology", "physics"]
+  },
+  {
+    "id": 2,
+    "info": {
+      "name": "Cersei Lannister",
+      "identity": "F123456(1)",
+      "phone1": "4213142288",
+      "phone2": "23347924",
+      "whatsapp": "4213142288",
+      "email": "cerseilannister@gmail.com",
+      "address": "Unit 703, 8/F, Building 1F, 10 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": " harvard primary school"
+        },
+        {
+          "period": "2016-2022",
+          "name": "bachelor of engineenring"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "HSBC",
+      "bankaccountNo": "598-231245-321"
+    },
+    "employee_status": "part-time",
+    "status": "active",
+    "jobs": 10,
+    "work_hour": 100,
+    "description": "he is a good boy",
+    "remark": "no work on tuesday",
+    "preference": ["chemistry", "biology"],
+    "tag": ["biology", "physics", "math", "chemistry"]
+  },
+  {
+    "id": 3,
+    "info": {
+      "name": "Jaime Lannister",
+      "identity": "F213423(1)",
+      "phone1": "6653242354",
+      "phone2": "80439938",
+      "whatsapp": "6653242354",
+      "email": "jaimelannister@gmail.com",
+      "address": "Unit 743, 7/F, Building 14W, 14 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": " UBC"
+        },
+        {
+          "period": "2016-2022",
+          "name": "bachelor of science"
+        },
+        {
+          "period": "2022-2024",
+          "name": "master of Artificial Intelligence"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "HSBC",
+      "bankaccountNo": "342-435234-213"
+    },
+    "employee_status": "full-time",
+    "status": "active",
+    "jobs": 9,
+    "work_hour": 130,
+    "description": "he is a smart boy",
+    "remark": "no work on weekends",
+    "preference": ["biology", "math", "physics"],
+    "tag": ["biology", "physics", "math"]
+  },
+  {
+    "id": 4,
+    "info": {
+      "name": "Anya Stark",
+      "identity": "F123456(3)",
+      "phone1": "6658699056",
+      "phone2": "382495723",
+      "whatsapp": "6658699056",
+      "email": "anyastark@gmail.com",
+      "address": "Unit 432, 4/F, Building 4W, 10 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": " CUHK"
+        },
+        {
+          "period": "2016-2022",
+          "name": "McGill"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "Hang Seng",
+      "bankaccountNo": "213-436564-236"
+    },
+    "employee_status": "part-time",
+    "status": "inactive",
+    "jobs": 50,
+    "work_hour": 530,
+    "description": "he is a nice boy",
+    "remark": "no work on tuesday",
+    "preference": ["biology", "math"],
+    "tag": ["biology", "math"]
+  },
+  {
+    "id": 5,
+    "info": {
+      "name": "Daenerys Targaryen",
+      "identity": "F105112(2)",
+      "phone1": "4214451189",
+      "phone2": "32456792",
+      "whatsapp": "4214451189",
+      "email": "daenerystargaryen@gmail.com",
+      "address": "Unit 234, 2/F, Building 2W, 2 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": " MIT"
+        },
+        {
+          "period": "2016-2022",
+          "name": "Princeton"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "HSBC",
+      "bankaccountNo": "234-324565-234"
+    },
+    "employee_status": "full-time",
+    "status": "active",
+    "jobs": 10,
+    "work_hour": 500,
+    "description": "he is a smart boy",
+    "remark": "no work on wednesday",
+    "preference": ["biology", "math", "physics"],
+    "tag": ["biology", "physics"]
+  },
+  {
+    "id": 6,
+    "info": {
+      "name": "Ever Melisandre",
+      "identity": "F213459(8)",
+      "phone1": "2325456483",
+      "phone2": "12345678",
+      "whatsapp": "2325456483",
+      "email": "evermelisandre@gmail.com",
+      "address": "Unit 930, 9/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": " oxford primary school"
+        },
+        {
+          "period": "2016-2022",
+          "name": "bachelor of science"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "HSBC",
+      "bankaccountNo": "498-231245-321"
+    },
+    "employee_status": "part-time",
+    "status": "inactive",
+    "jobs": 5,
+    "work_hour": 50,
+    "description": "he is a goog boy",
+    "remark": "no work on wednesday",
+    "preference": ["biology", "math"],
+    "tag": ["biology", "physics"]
+  },
+  {
+    "id": 7,
+    "info": {
+      "name": "Ferrara Clifford",
+      "identity": "F321431(2)",
+      "phone1": "5431240123",
+      "phone2": "23421763",
+      "whatsapp": "5431240123",
+      "email": "ferraraclifford@gmail.com",
+      "address": "Unit 842, 8/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": " Carnegie Melon University"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "HSBC",
+      "bankaccountNo": "234-32948-321"
+    },
+    "employee_status": "part-time",
+    "status": "inactive",
+    "jobs": 5,
+    "work_hour": 50,
+    "description": "he is a goog boy",
+    "remark": "no work on wednesday",
+    "preference": ["biology", "math"],
+    "tag": ["biology", "physics"]
+  },
+  {
+    "id": 8,
+    "info": {
+      "name": "Rossini Frances",
+      "identity": "F213451(1)",
+      "phone1": "2224445555",
+      "phone2": "11122233",
+      "whatsapp": "2224445555",
+      "email": "rossinifrances@gmail.com",
+      "address": "Unit 432, 5/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": " Princeton primary school"
+        },
+        {
+          "period": "2016-2022",
+          "name": "NUS"
+        },
+        {
+          "period": "2022-2026",
+          "name": "HKUST"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "HSBC",
+      "bankaccountNo": "333-55555-213"
+    },
+    "employee_status": "full-time",
+    "status": "active",
+    "jobs": 35,
+    "work_hour": 350,
+    "description": "he is a good boy",
+    "remark": "no work on tuesday, thursday",
+    "preference": ["biology", "chemistry"],
+    "tag": ["biology", "physics"]
+  },
+  {
+    "id": 9,
+    "info": {
+      "name": "Harvey Roxie",
+      "identity": "F123123(2)",
+      "phone1": "6651112222",
+      "phone2": "12312312",
+      "whatsapp": "6651112222",
+      "email": "harveyroxie@gmail.com",
+      "address": "Unit 902, 9/F, Building 9W, 9 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": "CUHK"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "BEA",
+      "bankaccountNo": "333-123123-111"
+    },
+    "employee_status": "full-time",
+    "status": "inactive",
+    "jobs": 25,
+    "work_hour": 320,
+    "description": "he is a busy boy",
+    "remark": "no work on monday",
+    "preference": ["chemistry", "math"],
+    "tag": ["physics", "math"]
+  },
+  {
+    "id": 10,
+    "info": {
+      "name": "Kevin Indrayana",
+      "identity": "F105112(5)",
+      "phone1": "8025555555",
+      "phone2": "80221922",
+      "whatsapp": "8025555555",
+      "email": "kevinindrayana@gmail.com",
+      "address": "Unit 902, 9/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
+      "qualification": [
+        {
+          "period": "2011-2015",
+          "name": "HKU"
+        },
+        {
+          "period": "2016-2022",
+          "name": "UC Berkeley"
+        }
+      ]
+    },
+    "bankAccount": {
+      "bankName": "HSBC",
+      "bankaccountNo": "409-876513-321"
+    },
+    "employee_status": "full-time",
+    "status": "active",
+    "jobs": 150,
+    "work_hour": 620,
+    "description": "he is a busy boy",
+    "remark": "no work on wednesday",
+    "preference": ["physics", "math"],
+    "tag": ["math", "physics"]
+  }
+]

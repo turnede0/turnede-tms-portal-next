@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "courseID": "PHY1001",
+    "courseName": "intro to physics",
+    "start": "2023-01-15T13:30:15.000+0800",
+    "end": "2023-01-15T15:30:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "kennedy town",
+    "repeat": "daily",
+    "endRepeat": "2024-01-15T15:30:15.000+0800",
+    "remark": "no remark"
+  },
+  {
+    "id": 2,
+    "courseID": "MATH3001",
+    "courseName": "discrete math",
+    "start": "2023-01-15T10:30:15.000+0800",
+    "end": "2023-01-15T13:30:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "chai wan",
+    "repeat": "monthly",
+    "endRepeat": "2024-01-15T13:30:15.000+0800",
+    "remark": "no remark"
+  },
+  {
+    "id": 3,
+    "courseID": "BIO2110",
+    "courseName": "intermediate biology",
+    "start": "2023-01-16T13:00:15.000+0800",
+    "end": "2023-01-16T14:30:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "wan chai",
+    "repeat": "weekly",
+    "endRepeat": "2024-01-16T14:30:15.000+0800",
+    "remark": "no remark"
+  },
+  {
+    "id": 4,
+    "courseID": "COMP2395",
+    "courseName": "object oriented programming",
+    "start": "2023-01-16T14:30:15.000+0800",
+    "end": "2023-01-16T15:30:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "cause way bay",
+    "repeat": "yearly",
+    "endRepeat": "2024-01-16T15:30:15.000+0800",
+    "remark": "no remark"
+  },
+  {
+    "id": 5,
+    "courseID": "CHEM1310",
+    "courseName": "intro to chemistry",
+    "start": "2023-01-17T20:30:15.000+0800",
+    "end": "2023-01-17T22:30:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "kennedy town",
+    "repeat": "daily",
+    "endRepeat": "2024-01-17T22:30:15.000+0800",
+    "remark": "no remark"
+  },
+  {
+    "id": 6,
+    "courseID": "BIO1012",
+    "courseName": "intro to biology",
+    "start": "2023-01-17T18:00:15.000+0800",
+    "end": "2023-01-17T19:00:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "kowloon tong",
+    "repeat": "weekly",
+    "endRepeat": "2024-01-17T19:00:15.000+0800",
+    "remark": "no remark"
+  },
+  {
+    "id": 7,
+    "courseID": "COMP1011",
+    "courseName": "intro to phyton",
+    "start": "2023-01-19T18:30:15.000+0800",
+    "end": "2023-01-19T19:30:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "mongkok",
+    "repeat": "monthly",
+    "endRepeat": "2024-01-19T19:30:15.000+0800",
+    "remark": "no remark"
+  },
+  {
+    "id": 8,
+    "courseID": "COMP3322",
+    "courseName": "intro to web development",
+    "start": "2023-01-19T19:30:15.000+0800",
+    "end": "2023-01-19T20:30:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "yau ma tei",
+    "repeat": "yearly",
+    "endRepeat": "2024-01-19T20:30:15.000+0800",
+    "remark": "no remark"
+  },
+  {
+    "id": 9,
+    "courseID": "MATH1851",
+    "courseName": "fundamental calculus",
+    "start": "2023-01-20T20:30:15.000+0800",
+    "end": "2023-01-20T21:30:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "jordan",
+    "repeat": "monthly",
+    "endRepeat": "2024-01-20T21:30:15.000+0800",
+    "remark": "no remark"
+  },
+  {
+    "id": 10,
+    "courseID": "PHY1300",
+    "courseName": "fundamental mechanics",
+    "start": "2023-01-20T21:30:15.000+0800",
+    "end": "2023-01-20T22:30:15.000+0800",
+    "client": "ABERDEEN TECHNICAL SCHOOL",
+    "location": "kowloon",
+    "repeat": "weekly",
+    "endRepeat": "2024-01-20T22:30:15.000+0800",
+    "remark": "no remark"
+  }
+]

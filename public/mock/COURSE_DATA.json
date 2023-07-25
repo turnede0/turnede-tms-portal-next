@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "courseID": "PHY1001",
+    "category": "physics",
+    "courseName": "intro to physics",
+    "difficulty": 1,
+    "description": "he is a smart kid",
+    "remark": "no work on monday"
+  },
+  {
+    "id": 2,
+    "courseID": "MATH3001",
+    "category": "math",
+    "courseName": "discrete math",
+    "difficulty": 3,
+    "description": "he is a good kid",
+    "remark": "no work on tuesday"
+  },
+  {
+    "id": 3,
+    "courseID": "BIO2110",
+    "category": "biology",
+    "courseName": "intermediate biology",
+    "difficulty": 2,
+    "description": "he is a smart kid",
+    "remark": "no work on wednesday"
+  },
+  {
+    "id": 4,
+    "courseID": "COMP2395",
+    "category": "computer",
+    "courseName": "object oriented programming",
+    "difficulty": 2,
+    "description": "he is a good kid",
+    "remark": "no work on thursday"
+  },
+  {
+    "id": 5,
+    "courseID": "CHEM1310",
+    "category": "chemistry",
+    "courseName": "intro to chemistry",
+    "difficulty": 1,
+    "description": "he is a smart kid",
+    "remark": "no work on friday"
+  },
+  {
+    "id": 6,
+    "courseID": "BIO1012",
+    "category": "biology",
+    "courseName": "intro to biology",
+    "difficulty": 1,
+    "description": "he is a good kid",
+    "remark": "no work on monday"
+  },
+  {
+    "id": 7,
+    "courseID": "COMP1011",
+    "category": "computer",
+    "courseName": "intro to phyton",
+    "difficulty": 1,
+    "description": "he is a smart kid",
+    "remark": "no work on tuesday"
+  },
+  {
+    "id": 8,
+    "courseID": "COMP3322",
+    "category": "computer",
+    "courseName": "intro to web development",
+    "difficulty": 3,
+    "description": "he is a good kid",
+    "remark": "no work on wednesday"
+  },
+  {
+    "id": 9,
+    "courseID": "MATH1851",
+    "category": "math",
+    "courseName": "fundamental calculus",
+    "difficulty": 1,
+    "description": "he is a smart kid",
+    "remark": "no work on thursday"
+  },
+  {
+    "id": 10,
+    "courseID": "PHY1300",
+    "category": "physics",
+    "courseName": "fundamental mechanics",
+    "difficulty": 1,
+    "description": "he is a good kid",
+    "remark": "no work on friday"
+  },
+  {
+    "id": 11,
+    "courseID": "MATH1853",
+    "category": "math",
+    "courseName": "linear algebra",
+    "difficulty": 1,
+    "description": "he is a smart kid",
+    "remark": "no work on saturday"
+  },
+  {
+    "id": 12,
+    "courseID": "COMP2233",
+    "category": "computer",
+    "courseName": "algorithm and data structure",
+    "difficulty": 2,
+    "description": "he is a good kid",
+    "remark": "no work on sunday"
+  }
+]
