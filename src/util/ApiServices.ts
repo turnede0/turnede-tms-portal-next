@@ -17,17 +17,15 @@ export const useCourseQuery = () =>
     },
   });
 
-export const useScheduleQuery = <TransformedType>(
-  // eslint-disable-next-line no-unused-vars
-  select?: (data: any) => TransformedType | undefined
-) =>
-  useQuery<ScheduleType[], Error>({
+export const useScheduleQuery = (select?: any) => {
+  return useQuery<ScheduleType[], Error>({
     queryKey: ["schedule"],
-    queryFn: () => {
+    queryFn: async () => {
       return schedule;
     },
     select,
   });
+};
 
 export const useScheduleEventQuery = () => {
   return useScheduleQuery((data: ScheduleType[]) => {
@@ -48,10 +46,10 @@ export const useScheduleEventQuery = () => {
   });
 };
 
-// export const useTutorQuery = () =>
-//   useQuery<TutorType[], Error>({
-//     queryKey: ["tutor"],
-//     queryFn: () => {
-//       return tutor;
-//     },
-//   });
+export const useTutorQuery = () =>
+  useQuery<TutorType[], Error>({
+    queryKey: ["tutor"],
+    queryFn: () => {
+      return tutor;
+    },
+  });

@@ -47,8 +47,8 @@ export type TutorType = {
     bankName: string;
     bankaccountNo: string;
   };
-  employee_status: "full-time" | "part-time" | "internship";
-  status: "active" | "inactive";
+  employee_status: string; //"full-time" | "part-time" | "internship";
+  status: string; //"active" | "inactive";
   jobs: number;
   work_hour: number;
   description: string;
