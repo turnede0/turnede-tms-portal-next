@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --ignore-path .gitignore --write **/*.{js,jsx,ts,tsx,json,css}"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.23.0",
@@ -19,9 +20,11 @@
     "clsx": "^2.0.0",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
+    "eslint-config-prettier": "^8.8.0",
     "next": "13.4.12",
     "next-intl": "^2.19.0",
     "postcss": "8.4.27",
+    "prettier": "^3.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",

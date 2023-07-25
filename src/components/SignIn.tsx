@@ -1,6 +1,6 @@
 "use client";
 import { SignIn as ClerkSignIn, useUser } from "@clerk/nextjs";
-import React, { useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import Logo from "@public/logo/turned-e-logo-zh.png";
 import { useTranslations } from "next-intl";
@@ -9,18 +9,18 @@ import { useRouter } from "next/navigation";
 
 const SignIn = () => {
   const { isSignedIn } = useUser();
-  //   const navigate = useNavigate();
   const t = useTranslations("Index");
   const router = useRouter();
 
-  useEffect(() => {
-    if (isSignedIn) {
-      console.log("login success");
-      router.push("/main");
-      //   navigate("/main");
-      // window.location.reload();
-    }
-  }, [isSignedIn]);
+  // useEffect(() => {
+  //   if (isSignedIn) {
+  //     console.log("login success");
+  //     router.push("/main");
+  //     //   navigate("/main");
+  //     // window.location.reload();
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [isSignedIn]);
 
   return (
     <div>

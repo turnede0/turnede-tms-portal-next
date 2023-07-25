@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 
 interface SidebarLinkGroupProps {
+  // eslint-disable-next-line no-unused-vars
   children: (handleClick: () => void, open: boolean) => ReactNode;
   activeCondition: boolean;
 }

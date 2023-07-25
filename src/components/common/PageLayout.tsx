@@ -1,20 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "@src/components/common/Header";
 import Sidebar from "@src/components/common//Sidebar";
 import { ReactNode } from "react";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
 type Props = {
   children?: ReactNode;
   title?: ReactNode;
-};
-
-const handleRedirect = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const router = useRouter();
-  router.push("/");
-  return (<></>) as ReactNode;
 };
 
 export default function PageLayout({ children }: Props) {
