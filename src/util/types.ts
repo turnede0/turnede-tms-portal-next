@@ -12,13 +12,25 @@ export type ScheduleType = {
   id: number;
   courseID: string;
   courseName: string;
-  start: string;
-  end: string;
+  start?: string;
+  end?: string;
   client: string;
   location: string;
   repeat: string; //'does not repeat' | 'daily' | 'weekly' | 'monthly' | 'yearly';
   endRepeat: string;
   remark: string;
+  //fullcalendar
+  daysOfWeek?: string[];
+  startTime?: string;
+  endTime?: string;
+};
+
+export type EventRecurType = {
+  daysOfWeek: string[];
+  startTime: string;
+  endTime: string;
+  startRecur: string;
+  endRecur: string;
 };
 
 export type ScheduleEventType = {
