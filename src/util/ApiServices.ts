@@ -3,7 +3,7 @@ import courses from "@public/mock/COURSE_DATA.json"; // DELETE: mock data
 import schedule from "@public/mock/SCHEDULE_DATA.json";
 import tutor from "@public/mock/TUTOR_DATA.json";
 import { CourseType, ScheduleType, TutorType } from "./types";
-import { EventSourceInput } from "@fullcalendar/core";
+import { EventInput } from "@fullcalendar/core";
 
 export const useCourseQuery = () =>
   useQuery<CourseType[], Error>({
@@ -25,18 +25,16 @@ export const useScheduleQuery = (select?: any) => {
 
 export const useScheduleEventQuery = () => {
   return useScheduleQuery((data: ScheduleType[]) => {
-    let result: EventSourceInput[] = [];
+    let result: EventInput[] = [];
     //find match search result
     result = data.map((element) => {
       return {
-        title: `${element.courseID} - ${element.courseName}`,
-        start: element.start,
-        end: element.end,
-        daysOfWeek: element.daysOfWeek,
-        startTime: element.startTime,
-        endTime: element.endTime,
+        title: `${element.info.courseID} - ${element.info.courseName}`,
+        rrule: element.rrule,
+        duration: element.duration,
+        extendedProps: element.info,
       };
-    }) as EventSourceInput[];
+    }) as EventInput[];
     //return distinct ShelfInfoType object array which is match with search shelf name
     return result;
   });

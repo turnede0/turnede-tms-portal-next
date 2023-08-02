@@ -4,8 +4,7 @@ import React from "react";
 export default function SidebarEvent(event: ScheduleType) {
   return (
     <li key={event.id}>
-      <b>{event.start}</b>
-      <i>{event.courseName}</i>
+      <b>{event.rrule.dtstart}</b>
     </li>
   );
 }
