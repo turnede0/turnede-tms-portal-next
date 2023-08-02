@@ -43,7 +43,9 @@ export default async function LocaleLayout({
   }
 
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    >
       <html className="h-full" lang={locale}>
         <body
           className={clsx(poppins.className, "flex h-full flex-col")}
