@@ -1,7 +1,12 @@
 "use client";
 import SignIn from "@src/components/SignIn";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    console.log("alex key", process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY);
+  }, []);
+
   return (
     <main>
       <SignIn />
