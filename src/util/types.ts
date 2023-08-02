@@ -1,3 +1,4 @@
+import { Frequency, WeekdayStr } from "rrule";
 export type CourseType = {
   id: number;
   courseID: string;
@@ -8,34 +9,26 @@ export type CourseType = {
   remark: string;
 };
 
-export type ScheduleType = {
-  id: number;
+export type ScheduleCourseInfoType = {
   courseID: string;
   courseName: string;
-  start?: string;
-  end?: string;
   client: string;
   location: string;
-  repeat: string; //'does not repeat' | 'daily' | 'weekly' | 'monthly' | 'yearly';
-  endRepeat: string;
   remark: string;
+  tutors: string[];
+  assistants: string[];
+};
+
+export type ScheduleType = {
+  id: number;
+  info: ScheduleCourseInfoType;
   //fullcalendar
-  daysOfWeek?: string[];
-  startTime?: string;
-  endTime?: string;
-};
-
-export type EventRecurType = {
-  daysOfWeek: string[];
-  startTime: string;
-  endTime: string;
-  startRecur: string;
-  endRecur: string;
-};
-
-export type ScheduleEventType = {
-  title: string;
-  rrule: { freq: string; dtstart: string; until: string };
+  rrule: {
+    freq: string; //'does not repeat' | 'daily' | 'weekly' | 'monthly' | 'yearly';
+    dtstart: string; //"2023-07-15T13:30:15.000+0800",
+    until: string; //"2023-08-07T15:30:15.000+0800"
+  };
+  duration: string; //"02:30"   2hr30mins
 };
 
 //Tutor start
