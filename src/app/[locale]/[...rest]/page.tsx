@@ -11,6 +11,24 @@ const PageNotFound = () => {
       </Link>
       <span>404 not found</span>
       <a href="/">back to sign in</a>
+
+      <div className="flex flex-row p-5">
+        <a
+          type="button"
+          href="/"
+          className="mx-2 inline-flex items-center justify-center bg-company px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+        >
+          Back to Sign in
+        </a>
+
+        <a
+          type="button"
+          href="/main"
+          className="mx-2 inline-flex items-center justify-center bg-company px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+        >
+          Back to Main page
+        </a>
+      </div>
     </div>
   );
 };

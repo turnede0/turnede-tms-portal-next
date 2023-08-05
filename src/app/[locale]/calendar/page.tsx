@@ -7,15 +7,8 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import { useScheduleEventQuery } from "@src/util/ApiServices";
-import {
-  EventSourceInput,
-  EventClickArg,
-  DateSelectArg,
-  EventApi,
-  CalendarApi,
-} from "@fullcalendar/core";
+import { EventClickArg, DateSelectArg, EventApi } from "@fullcalendar/core";
 import EventContent from "@src/components/Calendar/EventContent";
-import { createEventId } from "@src/util/utilFunction";
 import rrulePlugin from "@fullcalendar/rrule";
 import EventAddModal from "@src/components/Calendar/EventAddModal";
 import Breadcrumb from "@src/components/common/Breadcrumb";
@@ -26,7 +19,7 @@ const Calendar = () => {
 
   //modal
   const [addModalIsOpen, setAddModalIsOpen] = useState(false);
-  const [calendarApi, setCalendarApi] = useState<CalendarApi>();
+  const [selectInfo, setSelectInfo] = useState<DateSelectArg>();
 
   useEffect(() => {
     console.log("alex currentEvents=", currentEvents);
@@ -47,26 +40,9 @@ const Calendar = () => {
   };
 
   const handleDateSelect = (selectInfo: DateSelectArg) => {
-    // let title = prompt("Please enter a new title for your event");
     selectInfo.view.calendar.unselect();
-    setCalendarApi(selectInfo.view.calendar);
+    setSelectInfo(selectInfo);
     setAddModalIsOpen(true);
-    // let calendarApi = selectInfo.view.calendar;
-
-    // calendarApi.unselect(); // clear date selection
-
-    // if (title) {
-    //   calendarApi.addEvent({
-    //     id: createEventId(),
-    //     title,
-    //     start: selectInfo.startStr,
-    //     end: selectInfo.endStr,
-    //     allDay: selectInfo.allDay,
-    //     extendedProps: {
-    //       tutors: ["tom"],
-    //     },
-    //   });
-    // }
   };
 
   return (
@@ -94,7 +70,7 @@ const Calendar = () => {
               dayMaxEvents
               weekends={true}
               initialView="timeGridWeek"
-              events={eventsData as EventSourceInput}
+              events={eventsData}
               select={handleDateSelect}
               eventContent={EventContent} // custom render function
               eventClick={handleEventClick}
@@ -106,7 +82,7 @@ const Calendar = () => {
       <EventAddModal
         isOpen={addModalIsOpen}
         setIsOpen={setAddModalIsOpen}
-        calendarApi={calendarApi}
+        selectInfo={selectInfo}
       />
     </>
   );

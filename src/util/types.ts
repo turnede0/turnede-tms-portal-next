@@ -1,4 +1,3 @@
-import { Frequency, WeekdayStr } from "rrule";
 export type CourseType = {
   id: number;
   courseID: string;
@@ -20,15 +19,15 @@ export type ScheduleCourseInfoType = {
 };
 
 export type ScheduleType = {
-  id: number;
+  id: string;
   info: ScheduleCourseInfoType;
   //fullcalendar
   rrule: {
     freq: string; //'does not repeat' | 'daily' | 'weekly' | 'monthly' | 'yearly';
     dtstart: string; //"2023-07-15T13:30:15.000+0800",
-    until: string; //"2023-08-07T15:30:15.000+0800"
+    // until?: string; //"2023-08-07T15:30:15.000+0800"
   };
-  duration: string; //"02:30"   2hr30mins
+  duration: number; //"90"   90mins
 };
 
 //Tutor start
@@ -37,7 +36,7 @@ export type qualificationType = {
   name: string;
 };
 export type TutorType = {
-  id: number;
+  id: string;
   info: {
     name: string;
     identity: string;

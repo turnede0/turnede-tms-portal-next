@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const SignIn = () => {
-  const { isSignedIn } = useUser();
+  const { isSignedIn, user } = useUser();
   const t = useTranslations("Index");
   const router = useRouter();
 
@@ -24,8 +24,6 @@ const SignIn = () => {
               >
                 <Image className="block w-1/2" src={Logo} alt="Logo" />
               </Link>
-
-              <p className="2xl:px-20">{t("title")}</p>
 
               <span className="mt-15 inline-block">
                 <svg
@@ -155,13 +153,19 @@ const SignIn = () => {
           <div>
             <ClerkSignIn />
             {isSignedIn && (
-              <button
-                type="button"
-                className="inline-flex items-center justify-center bg-primary px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
-                onClick={() => router.push("/main")}
-              >
-                go to Dashboard
-              </button>
+              <div className="flex justify-center items-center flex-col">
+                <p className="2xl:px-20 my-10">
+                  {t("title")}, {user.username}
+                </p>
+
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center bg-primary px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+                  onClick={() => router.push("/main")}
+                >
+                  go to Dashboard
+                </button>
+              </div>
             )}
           </div>
         </div>
