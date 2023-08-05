@@ -1,18 +1,21 @@
 import { authMiddleware } from "@clerk/nextjs";
 import createMiddleware from "next-intl/middleware";
+import { stackMiddleware } from "./stackMiddleware";
 
-const intlMiddleware = createMiddleware({
-  locales: ["en", "zh"],
-  defaultLocale: "en",
-});
+const withIntl = () =>
+  createMiddleware({
+    locales: ["en", "zh"],
+    defaultLocale: "en",
+  });
 
-export default authMiddleware({
-  beforeAuth: (req) => {
-    return intlMiddleware(req);
-  },
+const withAuthorization = () =>
+  authMiddleware({
+    publicRoutes: ["/"],
+  });
 
-  publicRoutes: ["/"],
-});
+const middlewares = [withIntl, withAuthorization];
+
+export default stackMiddleware(middlewares);
 
 // export default authMiddleware();
 
