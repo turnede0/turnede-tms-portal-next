@@ -12,16 +12,6 @@ const SignIn = () => {
   const t = useTranslations("Index");
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (isSignedIn) {
-  //     console.log("login success");
-  //     router.push("/main");
-  //     //   navigate("/main");
-  //     // window.location.reload();
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [isSignedIn]);
-
   return (
     <div>
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark h-screen flex justify-center items-center">
