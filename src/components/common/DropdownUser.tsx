@@ -1,22 +1,20 @@
-import { useUser } from "@clerk/clerk-react";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-import { useClerk } from "@clerk/nextjs";
+import { signOut, useSession } from "next-auth/react";
 
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef<any>(null);
   const dropdown = useRef<any>(null);
-  const { user } = useUser();
-  const { signOut } = useClerk();
-  const router = useRouter();
-  const { isSignedIn } = useUser();
+
+  // const router = useRouter();
+  const { data: session } = useSession();
 
   // close on click outside
   useEffect(() => {
@@ -54,14 +52,14 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            {user?.username}
+            {session?.user?.name}
           </span>
-          <span className="block text-xs">{user?.id}</span>
+          <span className="block text-xs">{session?.user?.email}</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
           <Image
-            src={user?.profileImageUrl ?? ""}
+            src={session?.user?.image ?? ""}
             width="100"
             height="100"
             alt="User"
@@ -172,10 +170,11 @@ const DropdownUser = () => {
         <button
           className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
           onClick={() => {
-            signOut({});
-            if (!isSignedIn) {
-              router.push("/");
-            }
+            signOut();
+            // signOut({});
+            // if (!isSignedIn) {
+            //   router.push("/");
+            // }
           }}
         >
           <svg

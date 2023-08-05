@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { notFound } from "next/navigation";
 import { createTranslator, NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
-import { ClerkProvider } from "@clerk/nextjs";
 import "@src/app/[locale]/globals.css";
 import Providers from "@src/util/provider";
 
@@ -43,19 +42,15 @@ export default async function LocaleLayout({
   }
 
   return (
-    <ClerkProvider
-      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-    >
-      <html className="h-full" lang={locale}>
-        <body
-          className={clsx(poppins.className, "flex h-full flex-col")}
-          // suppressHydrationWarning={true}
-        >
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <Providers>{children}</Providers>
-          </NextIntlClientProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html className="h-full" lang={locale}>
+      <body
+        className={clsx(poppins.className, "flex h-full flex-col")}
+        // suppressHydrationWarning={true}
+      >
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Providers>{children}</Providers>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

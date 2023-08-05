@@ -15,7 +15,6 @@
     "check-all": "yarn check-format && yarn check-types && yarn check-lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.23.0",
     "@fullcalendar/core": "^6.1.8",
     "@fullcalendar/daygrid": "^6.1.8",
     "@fullcalendar/interaction": "^6.1.8",
@@ -37,6 +36,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "next": "13.4.12",
+    "next-auth": "^4.22.3",
     "next-intl": "^2.19.0",
     "postcss": "8.4.27",
     "prettier": "^3.0.0",
