@@ -4,6 +4,7 @@ const nextConfig = {
     domains: ["www.gravatar.com"],
     formats: ["image/avif", "image/webp"],
   },
+  swcMinify: false,
 };
 
 module.exports = nextConfig;
