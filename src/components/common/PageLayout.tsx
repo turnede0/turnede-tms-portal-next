@@ -53,7 +53,7 @@ export default function PageLayout({ children }: Props) {
               Redirect to the sign in page.
             */}
       <SignedOut>
-        <Loader />
+        <Loader /> {/*FIXME: change lang will coz signout */}
         <RedirectToSignIn />
       </SignedOut>
     </>

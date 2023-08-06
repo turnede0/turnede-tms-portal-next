@@ -1,13 +1,13 @@
 import { useUser } from "@clerk/clerk-react";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-
+import UserIcon from "@public/image/user/personal_icon.png";
 import { useClerk } from "@clerk/nextjs";
 
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import LocaleSwitcher from "../LocaleSwitcher";
+import LocaleSwitcher from "@src/components/LocaleSwitcher";
 import { FaLanguage } from "@react-icons/all-files/fa/FaLanguage";
 
 const DropdownUser = () => {
@@ -18,7 +18,6 @@ const DropdownUser = () => {
   const { user } = useUser();
   const { signOut } = useClerk();
   const router = useRouter();
-  const { isSignedIn } = useUser();
 
   // close on click outside
   useEffect(() => {
@@ -63,7 +62,7 @@ const DropdownUser = () => {
 
         <span className="h-12 w-12 rounded-full">
           <Image
-            src={user?.profileImageUrl ?? ""}
+            src={user?.profileImageUrl ?? UserIcon}
             width="100"
             height="100"
             alt="User"
@@ -178,10 +177,8 @@ const DropdownUser = () => {
         <button
           className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
           onClick={() => {
+            router.push("/");
             signOut({});
-            if (!isSignedIn) {
-              router.push("/");
-            }
           }}
         >
           <svg
