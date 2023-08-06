@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["www.gravatar.com"],
+    domains: ["gravatar.com"],
     formats: ["image/avif", "image/webp"],
   },
   swcMinify: false,
