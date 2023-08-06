@@ -3,8 +3,9 @@ import React, { Suspense, useState } from "react";
 import Header from "@src/components/common/Header";
 import Sidebar from "@src/components/common//Sidebar";
 import { ReactNode } from "react";
-import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import Loader from "@src/components/common/Loader";
+
 type Props = {
   children?: ReactNode;
   title?: ReactNode;
@@ -12,10 +13,11 @@ type Props = {
 
 export default function PageLayout({ children }: Props) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { isSignedIn } = useUser();
 
   return (
     <>
-      <SignedIn>
+      {isSignedIn ? (
         <div className="dark:bg-boxdark-2 dark:text-bodydark">
           {/* <!-- ===== Page Wrapper Start ===== --> */}
           <div className="flex h-screen overflow-hidden">
@@ -47,15 +49,16 @@ export default function PageLayout({ children }: Props) {
           </div>
           {/* <!-- ===== Page Wrapper End ===== --> */}
         </div>
-      </SignedIn>
-      {/* 
+      ) : (
+        <>
+          <Loader /> {/* */}
+          {/* 
               Route matches, but no user is signed in. 
               Redirect to the sign in page.
             */}
-      <SignedOut>
-        <Loader /> {/*FIXME: change lang will coz signout */}
-        <RedirectToSignIn />
-      </SignedOut>
+          {/* <RedirectToSignIn /> */}
+        </>
+      )}
     </>
   );
 }

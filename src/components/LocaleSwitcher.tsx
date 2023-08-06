@@ -13,7 +13,6 @@ export default function LocaleSwitcher() {
   const pathname = usePathname();
 
   async function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    // let a = `/${event.target.value}${pathname}`;
     console.log("change locale=", event.target.value);
     router.push(pathname, { locale: event.target.value });
     setTimeout(() => window.location.reload(), 200);
