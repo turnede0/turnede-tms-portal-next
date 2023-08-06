@@ -60,13 +60,8 @@ const DropdownUser = () => {
           <span className="block text-xs">{user?.id}</span>
         </span>
 
-        <span className="h-12 w-12 rounded-full">
-          <Image
-            src={user?.profileImageUrl ?? UserIcon}
-            width="100"
-            height="100"
-            alt="User"
-          />
+        <span className="h-12 w-12">
+          <Image className="rounded-full" src={UserIcon} alt="User" />
         </span>
 
         <svg
