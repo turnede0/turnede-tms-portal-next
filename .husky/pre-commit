@@ -3,8 +3,8 @@
 
 echo 'Styling ,testing and building project before committing.'
 
-# yarn lint-staged || (
-#     echo 'Failed lint-staged check. Make the required changes listed above, add changes and try to commit again.'
-#     false;
+yarn lint-staged || (
+    echo 'Failed lint-staged check. Make the required changes listed above, add changes and try to commit again.'
+    false;
 
-# )
+)
