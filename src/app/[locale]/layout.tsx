@@ -7,6 +7,7 @@ import { ReactNode } from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import "@src/app/[locale]/globals.css";
 import Providers from "@src/util/provider";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export async function generateMetadata({ params: { locale } }: Props) {
 
   return {
     title: t("LocaleLayout.title"),
+    description: t("LocaleLayout.description"),
   };
 }
 
@@ -47,6 +49,9 @@ export default async function LocaleLayout({
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
       <html className="h-full" lang={locale}>
+        <Head>
+          <link rel="shortcut icon" href="/public/favicon.ico" />
+        </Head>
         <body
           className={clsx(poppins.className, "flex h-full flex-col")}
           // suppressHydrationWarning={true}

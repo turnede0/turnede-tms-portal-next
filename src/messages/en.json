@@ -1,6 +1,7 @@
 {
   "LocaleLayout": {
-    "title": "TURNED-E! - Tutor managment system portal"
+    "title": "TURNED-E! - Tutor managment system portal",
+    "description": "The objective of this project is to develop the software platform for TMS,which is web application for scheduling lessons, and managing tutors."
   },
 
   "Index": {
