@@ -3,7 +3,14 @@
     "title": "TURNED-E! - 導師管理系統",
     "description": "該專案的目標是開發TMS的軟體平臺，這是用於安排課程和管理導師的Web應用程式。"
   },
+  "LocaleSwitcher": {
+    "label": "轉換語言",
+    "locale": "{locale, select, zh {繁體中文} en {English} other {未知}}"
+  },
   "Index": {
     "title": "你好"
+  },
+  "Sidebar": {
+    "menu": "目錄"
   }
 }

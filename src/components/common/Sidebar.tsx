@@ -6,6 +6,7 @@ import { BsPeopleFill } from "@react-icons/all-files/bs/BsPeopleFill";
 import { FaBook } from "@react-icons/all-files/fa/FaBook";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -13,7 +14,7 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
-  // const location = useLocation();
+  const t = useTranslations("Sidebar");
   const { pathname } = location;
 
   const trigger = useRef<any>(null);
@@ -69,7 +70,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <Link href="/main">
-          <Image src={Logo} alt="Logo" className="w-1/2" />
+          <Image src={Logo} alt="Logo" className="w-1/2 lg:w-full " />
         </Link>
 
         <button
@@ -102,7 +103,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           {/* <!-- Menu Group --> */}
           <div>
             <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
-              MENU
+              {t("menu")}
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">

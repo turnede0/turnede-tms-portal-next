@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import Header from "@src/components/common/Header";
 import Sidebar from "@src/components/common//Sidebar";
 import { ReactNode } from "react";
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
+import Loader from "@src/components/common/Loader";
 type Props = {
   children?: ReactNode;
   title?: ReactNode;
@@ -37,7 +38,7 @@ export default function PageLayout({ children }: Props) {
               {/* <!-- ===== Main Content Start ===== --> */}
               <main>
                 <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-                  {children}
+                  <Suspense fallback={<Loader />}>{children}</Suspense>
                 </div>
               </main>
               {/* <!-- ===== Main Content End ===== --> */}
@@ -47,13 +48,13 @@ export default function PageLayout({ children }: Props) {
           {/* <!-- ===== Page Wrapper End ===== --> */}
         </div>
       </SignedIn>
-      <SignedOut>
-        {/* 
+      {/* 
               Route matches, but no user is signed in. 
               Redirect to the sign in page.
             */}
+      <SignedOut>
+        <Loader />
         <RedirectToSignIn />
-        {/* {handleRedirect()} */}
       </SignedOut>
     </>
   );

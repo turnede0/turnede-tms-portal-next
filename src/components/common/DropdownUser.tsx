@@ -7,6 +7,8 @@ import { useClerk } from "@clerk/nextjs";
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import LocaleSwitcher from "../LocaleSwitcher";
+import { FaLanguage } from "@react-icons/all-files/fa/FaLanguage";
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -167,6 +169,10 @@ const DropdownUser = () => {
               </svg>
               Account Settings
             </Link>
+          </li>
+          <li className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out lg:text-base">
+            <FaLanguage size={22} />
+            <LocaleSwitcher />
           </li>
         </ul>
         <button
