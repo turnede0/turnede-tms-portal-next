@@ -15,7 +15,7 @@ export default function LocaleSwitcher() {
   async function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
     console.log("change locale=", event.target.value);
     router.push(pathname, { locale: event.target.value });
-    setTimeout(() => window.location.reload(), 200);
+    window.location.reload();
   }
 
   return (
