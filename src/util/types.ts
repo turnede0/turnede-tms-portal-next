@@ -20,14 +20,18 @@ export type ScheduleCourseInfoType = {
 
 export type ScheduleType = {
   id: string;
-  info: ScheduleCourseInfoType;
-  //fullcalendar
-  rrule: {
-    freq: string; //'does not repeat' | 'daily' | 'weekly' | 'monthly' | 'yearly';
-    dtstart: string; //"2023-07-15T13:30:15.000+0800",
-    // until?: string; //"2023-08-07T15:30:15.000+0800"
-  };
-  duration: number; //"90"   90mins
+  courseID: string;
+  courseName: string;
+  start: string;
+  duration: number;
+  client: string;
+  location: string;
+  tutors: string[];
+  assistants: string[];
+  // repeat: 'no repeat' | 'daily' | 'weekly' | 'monthly' | 'yearly';
+  repeat: string;
+  endRepeat: string;
+  remark: string;
 };
 
 //Tutor start

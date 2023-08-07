@@ -19,15 +19,15 @@ const Schedule = () => {
     },
     {
       header: "Course ID",
-      accessorKey: "info.courseID",
+      accessorKey: "courseID",
     },
     {
       header: "Course Name",
-      accessorKey: "info.courseName",
+      accessorKey: "courseName",
     },
     {
       header: "Start",
-      accessorKey: "rrule.dtstart",
+      accessorKey: "start",
     },
     {
       header: "Duration",
@@ -35,27 +35,27 @@ const Schedule = () => {
     },
     {
       header: "Client",
-      accessorKey: "info.client",
+      accessorKey: "client",
     },
     {
       header: "tutors",
-      accessorKey: "info.tutors",
+      accessorKey: "tutors",
     },
     {
       header: "assistants",
-      accessorKey: "info.assistants",
+      accessorKey: "assistants",
     },
     {
       header: "Location",
-      accessorKey: "info.location",
+      accessorKey: "location",
     },
     {
       header: "Repeat",
-      accessorKey: "rrule.freq",
+      accessorKey: "repeat",
     },
     {
       header: "Remark",
-      accessorKey: "info.remark",
+      accessorKey: "remark",
     },
   ];
 

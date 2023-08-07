@@ -2,7 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import courses from "@public/mock/COURSE_DATA.json"; // DELETE: mock data
 import schedule from "@public/mock/SCHEDULE_DATA.json";
 import tutor from "@public/mock/TUTOR_DATA.json";
-import { CourseType, ScheduleType, TutorType } from "./types";
+import {
+  CourseType,
+  ScheduleCourseInfoType,
+  ScheduleType,
+  TutorType,
+} from "./types";
 import { EventInput } from "@fullcalendar/core";
 import dayjs from "dayjs";
 var duration = require("dayjs/plugin/duration");
@@ -43,11 +48,34 @@ export const useScheduleEventQuery = () => {
     //find match search result
     result = data.map((element) => {
       return {
-        title: `${element.info.courseID} - ${element.info.courseName}`,
-        rrule: element.rrule,
+        title: `${element.courseID} - ${element.courseName}`,
+        rrule:
+          element.repeat !== "no repeat"
+            ? {
+                freq: element.repeat,
+                dtstart: element.start,
+                until: element.endRepeat,
+              }
+            : undefined,
         //@ts-ignore
+        //repeat event need rrule and duration
         duration: dayjs.duration(element.duration, "minutes").format("HH:mm"),
-        extendedProps: element.info,
+
+        //single event need start and end
+        start: element.start,
+        end: dayjs(element.start)
+          .add(element.duration ?? 0, "minutes")
+          .format("YYYY-MM-DDTHH:mm"),
+
+        extendedProps: {
+          courseID: element.courseID,
+          courseName: element.courseName,
+          client: element.client,
+          location: element.location,
+          remark: element.remark,
+          tutors: element.tutors,
+          assistants: element.assistants,
+        } as ScheduleCourseInfoType,
       };
     }) as EventInput[];
     //return distinct ShelfInfoType object array which is match with search shelf name

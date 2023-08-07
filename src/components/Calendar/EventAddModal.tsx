@@ -6,6 +6,10 @@ import { createEventId } from "@src/util/utilFunction";
 import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
 
+/**
+ * only accept single event
+ *
+ */
 interface PropsType {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -138,34 +142,37 @@ export default function EventAddModal(props: PropsType) {
                           {...register("courseName", { required: true })}
                         />
                       </div>
+
                       <div>
-                        <label className="mb-3 block text-black dark:text-white">
-                          Date start
-                        </label>
-                        <div className="relative">
-                          <input
-                            type="datetime-local"
-                            // defaultValue={dayjs(
-                            //   props.selectInfo?.startStr
-                            // ).format("YYYY-MM-DDTHH:mm")}
-                            {...register("startStr", { required: true })}
-                            className="custom-input-date custom-input-date-1 w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                          />
+                        <div>
+                          <label className="mb-3 block text-black dark:text-white">
+                            Date start
+                          </label>
+                          <div className="relative">
+                            <input
+                              type="datetime-local"
+                              // defaultValue={dayjs(
+                              //   props.selectInfo?.startStr
+                              // ).format("YYYY-MM-DDTHH:mm")}
+                              {...register("startStr", { required: true })}
+                              className="custom-input-date custom-input-date-1 w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                            />
+                          </div>
                         </div>
-                      </div>
-                      <div>
-                        <label className="mb-3 block text-black dark:text-white">
-                          Date end
-                        </label>
-                        <div className="relative">
-                          <input
-                            type="datetime-local"
-                            // defaultValue={dayjs(
-                            //   props.selectInfo?.endStr
-                            // ).format("YYYY-MM-DDTHH:mm")}
-                            {...register("endStr", { required: true })}
-                            className="custom-input-date custom-input-date-1 w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                          />
+                        <div>
+                          <label className="mb-3 block text-black dark:text-white">
+                            Date end
+                          </label>
+                          <div className="relative">
+                            <input
+                              type="datetime-local"
+                              // defaultValue={dayjs(
+                              //   props.selectInfo?.endStr
+                              // ).format("YYYY-MM-DDTHH:mm")}
+                              {...register("endStr", { required: true })}
+                              className="custom-input-date custom-input-date-1 w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>

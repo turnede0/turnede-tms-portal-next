@@ -4,7 +4,7 @@ import PageLayout from "@src/components/common/PageLayout";
 import { useParams } from "next/navigation";
 import Breadcrumb from "@src/components/common/Breadcrumb";
 import { useScheduleParticularEventQuery } from "@src/util/ApiServices";
-import ScheduleEvent from "@src/components/Schedule/ScheduleEvent";
+import ScheduleEvent from "@src/components/Calendar/ScheduleEvent";
 
 const Event = () => {
   const params = useParams();

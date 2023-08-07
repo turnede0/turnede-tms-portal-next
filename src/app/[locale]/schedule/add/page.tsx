@@ -2,7 +2,7 @@
 import React from "react";
 import PageLayout from "@src/components/common/PageLayout";
 import Breadcrumb from "@src/components/common/Breadcrumb";
-import ScheduleEvent from "@src/components/Schedule/ScheduleEvent";
+import ScheduleEvent from "@src/components/Calendar/ScheduleEvent";
 
 const Add = () => {
   return (

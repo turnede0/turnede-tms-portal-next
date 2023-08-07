@@ -61,6 +61,7 @@ export default function CourseDetail(props: PropsType) {
                   {...register("courseName", { required: true })}
                 />
               </div>
+              {/* difficulty */}
               <div>
                 <label className="mb-3 block text-black dark:text-white">
                   Difficulty
