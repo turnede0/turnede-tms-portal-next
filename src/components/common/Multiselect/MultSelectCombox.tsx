@@ -81,36 +81,35 @@ function MultSelectCombox(props: {
                   <Combobox.Button className="flex items-center px-2">
                     <HiChevronDown />
                   </Combobox.Button>
-
-                  <Transition
-                    as={Fragment}
-                    leave="transition ease-in duration-100"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                    show={open}
-                    afterLeave={() => setQuery("")}
-                  >
-                    <Combobox.Options className="block absolute top-24 bg-black w-5/6">
-                      {filteredChoice.length === 0 && query !== "" ? (
-                        <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
-                          Nothing found.
-                        </div>
-                      ) : (
-                        <>
-                          {filteredChoice.map((person) => (
-                            <Combobox.Option
-                              key={person}
-                              value={person}
-                              className="ui-active:bg-blue-500 ui-active:text-white ui-not-active:bg-white ui-not-active:text-black"
-                            >
-                              {person}
-                            </Combobox.Option>
-                          ))}
-                        </>
-                      )}
-                    </Combobox.Options>
-                  </Transition>
                 </div>
+                <Transition
+                  as={Fragment}
+                  leave="transition ease-in duration-100"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                  show={open}
+                  afterLeave={() => setQuery("")}
+                >
+                  <Combobox.Options>
+                    {filteredChoice.length === 0 && query !== "" ? (
+                      <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                        Nothing found.
+                      </div>
+                    ) : (
+                      <>
+                        {filteredChoice.map((person) => (
+                          <Combobox.Option
+                            key={person}
+                            value={person}
+                            className="ui-active:bg-blue-500 ui-active:text-white ui-not-active:bg-white ui-not-active:text-black"
+                          >
+                            {person}
+                          </Combobox.Option>
+                        ))}
+                      </>
+                    )}
+                  </Combobox.Options>
+                </Transition>
               </>
             )}
           </Combobox>
