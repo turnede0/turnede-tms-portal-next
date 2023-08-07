@@ -1,110 +1,110 @@
 [
   {
-    "id": 1,
+    "id": "COURSE-01",
     "courseID": "PHY1001",
     "category": "physics",
     "courseName": "intro to physics",
     "difficulty": 1,
-    "description": "he is a smart kid",
-    "remark": "no work on monday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 2,
+    "id": "COURSE-02",
     "courseID": "MATH3001",
     "category": "math",
     "courseName": "discrete math",
     "difficulty": 3,
-    "description": "he is a good kid",
-    "remark": "no work on tuesday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 3,
+    "id": "COURSE-03",
     "courseID": "BIO2110",
     "category": "biology",
     "courseName": "intermediate biology",
     "difficulty": 2,
-    "description": "he is a smart kid",
-    "remark": "no work on wednesday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 4,
+    "id": "COURSE-04",
     "courseID": "COMP2395",
     "category": "computer",
     "courseName": "object oriented programming",
     "difficulty": 2,
-    "description": "he is a good kid",
-    "remark": "no work on thursday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 5,
+    "id": "COURSE-05",
     "courseID": "CHEM1310",
     "category": "chemistry",
     "courseName": "intro to chemistry",
     "difficulty": 1,
-    "description": "he is a smart kid",
-    "remark": "no work on friday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 6,
+    "id": "COURSE-06",
     "courseID": "BIO1012",
     "category": "biology",
     "courseName": "intro to biology",
     "difficulty": 1,
-    "description": "he is a good kid",
-    "remark": "no work on monday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 7,
+    "id": "COURSE-07",
     "courseID": "COMP1011",
     "category": "computer",
     "courseName": "intro to phyton",
     "difficulty": 1,
-    "description": "he is a smart kid",
-    "remark": "no work on tuesday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 8,
+    "id": "COURSE-08",
     "courseID": "COMP3322",
     "category": "computer",
     "courseName": "intro to web development",
     "difficulty": 3,
-    "description": "he is a good kid",
-    "remark": "no work on wednesday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 9,
+    "id": "COURSE-09",
     "courseID": "MATH1851",
     "category": "math",
     "courseName": "fundamental calculus",
     "difficulty": 1,
-    "description": "he is a smart kid",
-    "remark": "no work on thursday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 10,
+    "id": "COURSE-10",
     "courseID": "PHY1300",
     "category": "physics",
     "courseName": "fundamental mechanics",
     "difficulty": 1,
-    "description": "he is a good kid",
-    "remark": "no work on friday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 11,
+    "id": "COURSE-11",
     "courseID": "MATH1853",
     "category": "math",
     "courseName": "linear algebra",
     "difficulty": 1,
-    "description": "he is a smart kid",
-    "remark": "no work on saturday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   },
   {
-    "id": 12,
+    "id": "COURSE-12",
     "courseID": "COMP2233",
     "category": "computer",
     "courseName": "algorithm and data structure",
     "difficulty": 2,
-    "description": "he is a good kid",
-    "remark": "no work on sunday"
+    "description": "new course ready to release",
+    "remark": "no remark"
   }
 ]

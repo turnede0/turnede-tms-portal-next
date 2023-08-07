@@ -8,13 +8,22 @@ import dayjs from "dayjs";
 var duration = require("dayjs/plugin/duration");
 dayjs.extend(duration);
 
-export const useCourseQuery = () =>
-  useQuery<CourseType[], Error>({
+export const useCourseQuery = <TransformedType = CourseType[]>(select?: any) =>
+  useQuery<CourseType[], Error, TransformedType>({
     queryKey: ["course"],
     queryFn: () => {
       return courses;
     },
+    select,
   });
+
+export const useCourseParticularItemQuery = (courseItemId: string) => {
+  return useCourseQuery<CourseType>((data: CourseType[]) => {
+    //find match search result
+    console.log("alex data=", data);
+    return data.find((item) => item.id === courseItemId) as CourseType;
+  });
+};
 
 export const useScheduleQuery = <TransformedType = ScheduleType[]>(
   select?: any
