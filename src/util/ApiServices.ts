@@ -31,7 +31,8 @@ export const useCourseParticularItemQuery = (courseItemId: string) => {
 };
 
 export const useScheduleQuery = <TransformedType = ScheduleType[]>(
-  select?: any
+  // eslint-disable-next-line no-unused-vars
+  select?: (data: ScheduleType[]) => TransformedType
 ) => {
   return useQuery<ScheduleType[], Error, TransformedType>({
     queryKey: ["schedule"],
