@@ -1,5 +1,4 @@
 import { Combobox, Transition } from "@headlessui/react";
-import { ScheduleType } from "@src/util/types";
 import { Controller, Control } from "react-hook-form";
 import { Fragment, useState } from "react";
 import { HiChevronDown } from "@react-icons/all-files/hi/HiChevronDown";
@@ -7,7 +6,7 @@ import { GrRadialSelected } from "@react-icons/all-files/gr/GrRadialSelected";
 
 function MultSelectCombox(props: {
   formStateValue: string;
-  control: Control<ScheduleType, any>;
+  control: Control<any, any>;
   option: string[];
 }) {
   const [query, setQuery] = useState("");

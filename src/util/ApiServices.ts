@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import courses from "@public/mock/COURSE_DATA.json"; // DELETE: mock data
 import schedule from "@public/mock/SCHEDULE_DATA.json";
-import tutor from "@public/mock/TUTOR_DATA.json";
+import tutors from "@public/mock/TUTOR_DATA.json";
 import {
   CourseType,
   ScheduleCourseInfoType,
@@ -91,11 +91,20 @@ export const useScheduleParticularEventQuery = (eventId: string) => {
   });
 };
 
-export const useTutorQuery = () =>
-  useQuery<TutorType[], Error>({
+export const useTutorQuery = <TransformType = TutorType[]>(select?: any) =>
+  useQuery<TutorType[], Error, TransformType>({
     //@ts-ignore
     queryKey: ["tutor"],
     queryFn: () => {
-      return tutor;
+      return tutors;
     },
+    select,
   });
+
+export const useTutorParticularItemQuery = (tutorItemId: string) => {
+  return useTutorQuery<TutorType>((data: TutorType[]) => {
+    //find match search result
+    console.log("alex data=", data);
+    return data.find((item) => item.id === tutorItemId) as TutorType;
+  });
+};
