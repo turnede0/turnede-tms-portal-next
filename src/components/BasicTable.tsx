@@ -305,9 +305,6 @@ export default function BasicTable({
                   <tr
                     key={row.id}
                     className="bg-white border-b dark:bg-black dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-black"
-                    onClick={() =>
-                      router.push(`${pathName}/${row.getValue("id")}`)
-                    }
                   >
                     <td className="w-4 p-4">
                       <div className="flex items-center">
@@ -320,7 +317,13 @@ export default function BasicTable({
                       </div>
                     </td>
                     {row.getVisibleCells().map((cell) => (
-                      <td key={cell.id} className="w-4 p-4">
+                      <td
+                        key={cell.id}
+                        className="w-4 p-4"
+                        onClick={() =>
+                          router.push(`${pathName}/${row.getValue("id")}`)
+                        }
+                      >
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()
