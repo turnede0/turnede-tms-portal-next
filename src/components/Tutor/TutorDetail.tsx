@@ -1,7 +1,7 @@
 "use client";
 import { TutorType, qualificationType } from "@src/util/types";
 import React from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import MultSelectCombox from "../common/Multiselect/MultSelectCombox";
 
 interface PropsType {
@@ -141,10 +141,104 @@ export default function TutorDetail(props: PropsType) {
                   ></textarea>
                 </div>
                 {/* Qualification */}
-                <div>
+                <div className="flex flex-col gap-2">
                   <label className="mb-3 block text-black dark:text-white">
                     Qualification
                   </label>
+                  <Controller
+                    name="info.qualification"
+                    control={control}
+                    rules={{ required: false }}
+                    render={({ field: { onChange, value } }) => (
+                      <div>
+                        {(value as qualificationType[])?.length > 0 && (
+                          <div>
+                            {(value as qualificationType[]).map(
+                              (qualification, index) => {
+                                return (
+                                  <div
+                                    key={index}
+                                    className="flex flex-col gap-5"
+                                  >
+                                    <div className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-lg my-1 p-3 gap-2">
+                                      {/* Name */}
+                                      <div>
+                                        <label className="mb-3 block text-black dark:text-white">
+                                          Degree
+                                        </label>
+                                        <input
+                                          type="text"
+                                          className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                          {...register(
+                                            //@ts-ignore
+                                            `info.qualification[${index}].name`
+                                          )}
+                                        />
+                                      </div>
+                                      {/* Name */}
+                                      <div>
+                                        <label className="mb-3 block text-black dark:text-white">
+                                          Period
+                                        </label>
+                                        <input
+                                          type="text"
+                                          className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                          {...register(
+                                            //@ts-ignore
+                                            `info.qualification[${index}].period`
+                                          )}
+                                        />
+                                      </div>
+                                      {/* Delete Button */}
+                                      <div className="flex flex-row justify-end">
+                                        <button
+                                          type="button"
+                                          className="mt-3 inline-flex w-auto justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                          //delete item from array
+                                          onClick={() => {
+                                            onChange(
+                                              (e: qualificationType[]) => {
+                                                let temp = e.filter(
+                                                  function (item) {
+                                                    return (
+                                                      item !== qualification
+                                                    );
+                                                  }
+                                                );
+                                                console.log("temp=", temp);
+                                                return temp;
+                                              }
+                                            );
+                                          }}
+                                        >
+                                          Delete
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                );
+                              }
+                            )}
+                          </div>
+                        )}
+                        <button
+                          type="submit"
+                          className="inline-flex w-full justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-2"
+                          //add new empty item from array
+                          onClick={() =>
+                            onChange((e: qualificationType[]) => {
+                              return [
+                                ...e,
+                                { period: "", name: "" } as qualificationType,
+                              ];
+                            })
+                          }
+                        >
+                          Add
+                        </button>
+                      </div>
+                    )}
+                  />
                 </div>
               </div>
             </div>
