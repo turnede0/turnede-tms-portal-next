@@ -107,7 +107,7 @@ export default function TutorDetail(props: PropsType) {
                     {...register("info.phone2")}
                   />
                 </div>
-                {/* whatsapp */}
+                {/* Whatsapp */}
                 <div>
                   <label className="mb-3 block text-black dark:text-white">
                     Whatsapp
@@ -118,7 +118,7 @@ export default function TutorDetail(props: PropsType) {
                     {...register("info.whatsapp")}
                   />
                 </div>
-                {/* email */}
+                {/* Email */}
                 <div>
                   <label className="mb-3 block text-black dark:text-white">
                     Email
@@ -129,7 +129,7 @@ export default function TutorDetail(props: PropsType) {
                     {...register("info.email")}
                   />
                 </div>
-                {/* address */}
+                {/* Address */}
                 <div>
                   <label className="mb-3 block text-black dark:text-white">
                     Address
@@ -140,8 +140,16 @@ export default function TutorDetail(props: PropsType) {
                     className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   ></textarea>
                 </div>
+                {/* Qualification */}
+                <div>
+                  <label className="mb-3 block text-black dark:text-white">
+                    Qualification
+                  </label>
+                </div>
               </div>
             </div>
+          </div>
+          <div className="flex flex-col gap-9">
             {/* <!-- Bank Field --> */}
             <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
               <div className="flex flex-col gap-9">
@@ -173,8 +181,6 @@ export default function TutorDetail(props: PropsType) {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="flex flex-col gap-9">
             {/* <!-- Others Field --> */}
             <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
               <div className="flex flex-col gap-5.5 p-6.5">
