@@ -11,11 +11,13 @@
       "address": "Unit 702, 7/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": " oxford primary school"
         },
         {
-          "period": "2016-2022",
+          "periodFrom": "2016-09",
+          "periodTo": "2022-06",
           "name": "bachelor of science"
         }
       ]
@@ -45,11 +47,13 @@
       "address": "Unit 703, 8/F, Building 1F, 10 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": " harvard primary school"
         },
         {
-          "period": "2016-2022",
+          "periodFrom": "2016-09",
+          "periodTo": "2022-06",
           "name": "bachelor of engineenring"
         }
       ]
@@ -79,15 +83,18 @@
       "address": "Unit 743, 7/F, Building 14W, 14 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": " UBC"
         },
         {
-          "period": "2016-2022",
+          "periodFrom": "2016-09",
+          "periodTo": "2022-06",
           "name": "bachelor of science"
         },
         {
-          "period": "2022-2024",
+          "periodFrom": "2022-09",
+          "periodTo": "2024-06",
           "name": "master of Artificial Intelligence"
         }
       ]
@@ -117,11 +124,13 @@
       "address": "Unit 432, 4/F, Building 4W, 10 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": " CUHK"
         },
         {
-          "period": "2016-2022",
+          "periodFrom": "2016-09",
+          "periodTo": "2022-06",
           "name": "McGill"
         }
       ]
@@ -151,11 +160,13 @@
       "address": "Unit 234, 2/F, Building 2W, 2 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": " MIT"
         },
         {
-          "period": "2016-2022",
+          "periodFrom": "2016-09",
+          "periodTo": "2022-06",
           "name": "Princeton"
         }
       ]
@@ -185,11 +196,13 @@
       "address": "Unit 930, 9/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": " oxford primary school"
         },
         {
-          "period": "2016-2022",
+          "periodFrom": "2016",
+          "periodTo": "2022",
           "name": "bachelor of science"
         }
       ]
@@ -219,7 +232,8 @@
       "address": "Unit 842, 8/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": " Carnegie Melon University"
         }
       ]
@@ -249,15 +263,18 @@
       "address": "Unit 432, 5/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": " Princeton primary school"
         },
         {
-          "period": "2016-2022",
+          "periodFrom": "2016-09",
+          "periodTo": "2022-06",
           "name": "NUS"
         },
         {
-          "period": "2022-2026",
+          "periodFrom": "2022-09",
+          "periodTo": "2026-06",
           "name": "HKUST"
         }
       ]
@@ -287,7 +304,8 @@
       "address": "Unit 902, 9/F, Building 9W, 9 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": "CUHK"
         }
       ]
@@ -317,11 +335,13 @@
       "address": "Unit 902, 9/F, Building 10W, 10 Science Park West Avenue, Hong Kong Science Park",
       "qualification": [
         {
-          "period": "2011-2015",
+          "periodFrom": "2011-09",
+          "periodTo": "2015-06",
           "name": "HKU"
         },
         {
-          "period": "2016-2022",
+          "periodFrom": "2016-09",
+          "periodTo": "2022-06",
           "name": "UC Berkeley"
         }
       ]

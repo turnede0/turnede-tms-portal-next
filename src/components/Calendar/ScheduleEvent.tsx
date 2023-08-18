@@ -45,7 +45,6 @@ export default function ScheduleEvent(props: PropsType) {
 
   return (
     <>
-      {" "}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 gap-9 sm:grid-cols-2">
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">

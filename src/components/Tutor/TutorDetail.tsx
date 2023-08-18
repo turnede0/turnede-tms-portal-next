@@ -180,14 +180,27 @@ export default function TutorDetail(props: PropsType) {
                                         <label className="mb-3 block text-black dark:text-white">
                                           Period
                                         </label>
-                                        <input
-                                          type="text"
-                                          className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                          {...register(
-                                            //@ts-ignore
-                                            `info.qualification[${index}].period`
-                                          )}
-                                        />
+                                        <div className="flex flex-row items-center justify-center gap-5">
+                                          <input
+                                            type="month"
+                                            className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                            {...register(
+                                              //@ts-ignore
+                                              `info.qualification[${index}].periodFrom`
+                                            )}
+                                          />
+                                          <span className="text-xl font-bold">
+                                            -
+                                          </span>
+                                          <input
+                                            type="month"
+                                            className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                            {...register(
+                                              //@ts-ignore
+                                              `info.qualification[${index}].periodTo`
+                                            )}
+                                          />
+                                        </div>
                                       </div>
                                       {/* Delete Button */}
                                       <div className="flex flex-row justify-end">
