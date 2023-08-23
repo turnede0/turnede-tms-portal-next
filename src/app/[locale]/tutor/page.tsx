@@ -7,8 +7,11 @@ import Breadcrumb from "@src/components/common/Breadcrumb";
 import Image from "next/image";
 import CoverOne from "@public/image/cover/cover-01.png";
 import BasicTable from "@src/components/BasicTable";
+import { useTranslations } from "next-intl";
 
 const Tutor = () => {
+  const t = useTranslations("Tutor");
+
   const { data, isSuccess } = useTutorQuery();
   const router = useRouter();
 
@@ -25,7 +28,7 @@ const Tutor = () => {
   ];
   return (
     <PageLayout>
-      <Breadcrumb pageName="Tutor" />
+      <Breadcrumb pageName={t("title")} />
       <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="relative z-20 h-35 md:h-65">
           <Image

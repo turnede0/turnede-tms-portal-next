@@ -12,8 +12,11 @@ import EventContent from "@src/components/Calendar/EventContent";
 import rrulePlugin from "@fullcalendar/rrule";
 import EventAddModal from "@src/components/Calendar/EventAddModal";
 import Breadcrumb from "@src/components/common/Breadcrumb";
+import { useTranslations } from "next-intl";
 
 const Calendar = () => {
+  const t = useTranslations("Calendar");
+
   const { data: eventsData, isSuccess } = useScheduleEventQuery();
   const [currentEvents, setCurrentEvents] = useState<EventApi[]>([]);
 
@@ -49,7 +52,7 @@ const Calendar = () => {
     <>
       <PageLayout>
         <div>
-          <Breadcrumb pageName="Calendar" />
+          <Breadcrumb pageName={t("title")} />
           {isSuccess && (
             <FullCalendar
               plugins={[

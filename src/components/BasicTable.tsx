@@ -11,8 +11,9 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 type BasicTableType = {
   data: any;
@@ -20,13 +21,115 @@ type BasicTableType = {
   handleAdd: () => void;
 };
 
+// eslint-disable-next-line no-unused-vars
+enum Condition {
+  // eslint-disable-next-line no-unused-vars
+  includes = "includes",
+  // eslint-disable-next-line no-unused-vars
+  excludes = "excludes",
+  // eslint-disable-next-line no-unused-vars
+  between = "between",
+  // eslint-disable-next-line no-unused-vars
+  equal = "equal to",
+  // eslint-disable-next-line no-unused-vars
+  not_equal = "not equal to",
+  // eslint-disable-next-line no-unused-vars
+  larger = "larger than",
+  // eslint-disable-next-line no-unused-vars
+  smaller = "smaller than",
+  // eslint-disable-next-line no-unused-vars
+  larger_equal = "larger than or equal to",
+  // eslint-disable-next-line no-unused-vars
+  smaller_equal = "smaller than or equal to",
+}
+
 export default function BasicTable({
   data,
   columns,
   handleAdd,
 }: BasicTableType) {
+  const t = useTranslations("BasicTable");
+
+  const conditionTranslations = {
+    [Condition.includes]: t("filter.condition.includes"),
+    [Condition.excludes]: t("filter.condition.excludes"),
+    [Condition.between]: t("filter.condition.between"),
+    [Condition.equal]: t("filter.condition.equal"),
+    [Condition.not_equal]: t("filter.condition.not_equal"),
+    [Condition.larger]: t("filter.condition.larger"),
+    [Condition.smaller]: t("filter.condition.smaller"),
+    [Condition.larger_equal]: t("filter.condition.larger_equal"),
+    [Condition.smaller_equal]: t("filter.condition.smaller_equal"),
+  };
+
   const [sorting, setSorting] = useState<SortingState>();
-  const [filtering, setFiltering] = useState("");
+  const [globalFilter, setGlobalFilter] = useState("");
+
+  const [filterMenuOpened, setFilterMenuOpened] = useState(false);
+  const [field, setField] = useState("All");
+  const [condition, setCondition] = useState(Condition.includes);
+  const [numberValue, setNumberValue] = useState([0, 10]);
+  const [stringValue, setStringValue] = useState("");
+
+  useEffect(() => {
+    if (!filterMenuOpened) {
+      table.getColumn(field)?.setFilterValue(null);
+      return;
+    }
+    if (field === "All") {
+      setGlobalFilter(stringValue);
+    } else {
+      switch (condition) {
+        case Condition.includes:
+          table.getColumn(field)?.setFilterValue(stringValue);
+          break;
+        case Condition.excludes:
+          //table.getColumn(field)?.setFilterValue(stringValue);
+          break;
+        case Condition.between:
+          table
+            .getColumn(field)
+            ?.setFilterValue([numberValue[0], numberValue[1]]);
+          break;
+        case Condition.larger:
+          table
+            .getColumn(field)
+            ?.setFilterValue(() => [
+              numberValue[0] + Number.EPSILON * 10,
+              Number.POSITIVE_INFINITY,
+            ]);
+
+          break;
+        case Condition.larger_equal:
+          table
+            .getColumn(field)
+            ?.setFilterValue(() => [numberValue[0], Number.POSITIVE_INFINITY]);
+          break;
+        case Condition.smaller:
+          table
+            .getColumn(field)
+            ?.setFilterValue(() => [
+              Number.NEGATIVE_INFINITY,
+              numberValue[1] - Number.EPSILON * 10,
+            ]);
+          break;
+        case Condition.smaller_equal:
+          table
+            .getColumn(field)
+            ?.setFilterValue(() => [Number.NEGATIVE_INFINITY, numberValue[1]]);
+          break;
+        case Condition.equal:
+          table
+            .getColumn(field)
+            ?.setFilterValue(() => [numberValue[0], numberValue[0]]);
+          break;
+        case Condition.not_equal:
+          //
+          break;
+      }
+    }
+  }, [field, condition, stringValue, numberValue, filterMenuOpened]);
+
   const router = useRouter();
   const pathName = usePathname();
 
@@ -39,10 +142,10 @@ export default function BasicTable({
     getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting: sorting,
-      globalFilter: filtering,
+      globalFilter: globalFilter,
     },
     onSortingChange: setSorting as OnChangeFn<SortingState>,
-    onGlobalFilterChange: setFiltering,
+    onGlobalFilterChange: setGlobalFilter,
   });
 
   return (
@@ -74,9 +177,9 @@ export default function BasicTable({
                     type="text"
                     id="simple-search"
                     className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    placeholder="Search"
-                    value={filtering}
-                    onChange={(e) => setFiltering(e.target.value)}
+                    placeholder={t("search")}
+                    value={globalFilter}
+                    onChange={(e) => setGlobalFilter(e.target.value)}
                   />
                 </div>
               </form>
@@ -100,7 +203,7 @@ export default function BasicTable({
                     d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
                   />
                 </svg>
-                Add
+                {t("add")}
               </button>
               <div className="flex items-center space-x-3 w-full md:w-auto">
                 <button
@@ -122,7 +225,7 @@ export default function BasicTable({
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                     />
                   </svg>
-                  Actions
+                  {t("actions")}
                 </button>
                 <div
                   id="actionsDropdown"
@@ -155,6 +258,9 @@ export default function BasicTable({
                   data-dropdown-toggle="filterDropdown"
                   className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                   type="button"
+                  onClick={() => {
+                    setFilterMenuOpened(!filterMenuOpened);
+                  }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +275,7 @@ export default function BasicTable({
                       clipRule="evenodd"
                     />
                   </svg>
-                  Filter
+                  {t("filter.title")}
                   <svg
                     className="-mr-1 ml-1.5 w-5 h-5"
                     fill="currentColor"
@@ -184,7 +290,7 @@ export default function BasicTable({
                     />
                   </svg>
                 </button>
-                <div
+                {/*                 <div
                   id="filterDropdown"
                   className="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700"
                 >
@@ -251,11 +357,226 @@ export default function BasicTable({
                       </label>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
-
+          <div
+            id="filterMenu"
+            className={`flex item-center justify-between z-10 w-auto p-3 bg-white rounded-lg shadow dark:bg-gray-700 gap-3 ${
+              !filterMenuOpened ? "hidden" : "visible"
+            }`}
+          >
+            <div className="flex flex-row items-center">
+              <span>{t("filter.field.title")}</span>
+              <div className="relative z-20 bg-white dark:bg-form-input">
+                <select
+                  value={field}
+                  onChange={(e) => {
+                    setField(e.target.value);
+                    setCondition(
+                      e.target.value !== "All" &&
+                        typeof table
+                          .getPreFilteredRowModel()
+                          .flatRows[0].getValue(e.target.value) === "number"
+                        ? condition === Condition.includes ||
+                          condition === Condition.excludes
+                          ? Condition.between
+                          : condition
+                        : condition === Condition.includes ||
+                          condition === Condition.excludes
+                        ? condition
+                        : Condition.includes
+                    );
+                    console.log(condition);
+                  }}
+                  className="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-12 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
+                >
+                  <option value="All">{t("filter.field.all")}</option>
+                  {table.getAllColumns().map((col) => (
+                    <option key={col.id} value={col.id}>
+                      {col.id}
+                    </option>
+                  ))}
+                </select>
+                <span className="absolute right-4 top-1/2 z-10 -translate-y-1/2">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g opacity="0.8">
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                        fill="#637381"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-row items-center">
+              <span>{t("filter.condition.title")}</span>
+              <div className="relative z-20 bg-white dark:bg-form-input">
+                <select
+                  value={condition}
+                  onChange={(e) => {
+                    setCondition(e.target.value as Condition);
+                  }}
+                  className="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-12 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
+                >
+                  {field !== "All" &&
+                  typeof table
+                    .getPreFilteredRowModel()
+                    .flatRows[0].getValue(field) === "number" ? (
+                    <>
+                      <option value={Condition.between}>
+                        {conditionTranslations[Condition.between]}
+                      </option>
+                      <option value={Condition.equal}>
+                        {conditionTranslations[Condition.equal]}
+                      </option>
+                      <option value={Condition.not_equal}>
+                        {conditionTranslations[Condition.not_equal]}
+                      </option>
+                      <option value={Condition.larger}>
+                        {conditionTranslations[Condition.larger]}
+                      </option>
+                      <option value={Condition.smaller}>
+                        {conditionTranslations[Condition.smaller]}
+                      </option>
+                      <option value={Condition.larger_equal}>
+                        {conditionTranslations[Condition.larger_equal]}
+                      </option>
+                      <option value={Condition.smaller_equal}>
+                        {conditionTranslations[Condition.smaller_equal]}
+                      </option>
+                    </>
+                  ) : (
+                    <>
+                      <option value={Condition.includes}>
+                        {conditionTranslations[Condition.includes]}
+                      </option>
+                      <option value={Condition.excludes}>
+                        {conditionTranslations[Condition.excludes]}
+                      </option>
+                    </>
+                  )}
+                </select>
+                <span className="absolute right-4 top-1/2 z-10 -translate-y-1/2">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g opacity="0.8">
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                        fill="#637381"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-row items-center">
+              <span>{t("filter.value")}</span>
+              {condition !== Condition.between ? (
+                condition === Condition.includes ||
+                condition === Condition.excludes ? (
+                  <input
+                    value={stringValue}
+                    onChange={(e) => {
+                      setStringValue(e.target.value);
+                    }}
+                    type="text"
+                    className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                ) : (
+                  <input
+                    /* min={Number(
+                      table
+                        .getColumn(field.name)
+                        ?.getFacetedMinMaxValues()?.[0] ?? ""
+                    )}
+                    max={Number(
+                      table
+                        .getColumn(field.name)
+                        ?.getFacetedMinMaxValues()?.[1] ?? ""
+                    )} */
+                    value={
+                      condition === Condition.smaller ||
+                      condition === Condition.smaller_equal
+                        ? numberValue[1]
+                        : numberValue[0]
+                    }
+                    onChange={(e) => {
+                      condition === Condition.smaller ||
+                      condition === Condition.smaller_equal
+                        ? setNumberValue([
+                            numberValue[0],
+                            Number(e.target.value),
+                          ])
+                        : setNumberValue([
+                            Number(e.target.value),
+                            numberValue[1],
+                          ]);
+                    }}
+                    type="number"
+                    className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                )
+              ) : (
+                <div className="flex flex-row items-center">
+                  <input
+                    /* min={Number(
+                      table
+                        .getColumn(field.name)
+                        ?.getFacetedMinMaxValues()?.[0] ?? ""
+                    )}
+                    max={Number(
+                      table
+                        .getColumn(field.name)
+                        ?.getFacetedMinMaxValues()?.[1] ?? ""
+                    )} */
+                    onChange={(e) => {
+                      setNumberValue([Number(e.target.value), numberValue[1]]);
+                    }}
+                    value={numberValue[0]}
+                    type="number"
+                    className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                  <span className=" text-xl font-bold">-</span>
+                  <input
+                    /* min={Number(
+                      table
+                        .getColumn(field.name)
+                        ?.getFacetedMinMaxValues()?.[0] ?? ""
+                    )}
+                    max={Number(
+                      table
+                        .getColumn(field.name)
+                        ?.getFacetedMinMaxValues()?.[1] ?? ""
+                    )} */
+                    onChange={(e) => {
+                      setNumberValue([numberValue[0], Number(e.target.value)]);
+                    }}
+                    value={numberValue[1]}
+                    type="number"
+                    className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
           {/* table header end */}
           {/* table body start */}
           <div className="overflow-x-auto">
@@ -304,7 +625,7 @@ export default function BasicTable({
                 {table.getRowModel().rows.map((row) => (
                   <tr
                     key={row.id}
-                    className="bg-white border-b dark:bg-black dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-black"
+                    className="bg-white border-b dark:bg-black dark:border-gray-700 hover:bg-slate-100 dark:hover:bg-slate-600"
                   >
                     <td className="w-4 p-4">
                       <div className="flex items-center">
@@ -366,14 +687,14 @@ export default function BasicTable({
               {">>"}
             </button>
             <span className="flex items-center gap-1">
-              <div>Page</div>
+              <div>{t("page")}</div>
               <strong>
-                {table.getState().pagination.pageIndex + 1} of{" "}
-                {table.getPageCount()}
+                {table.getState().pagination.pageIndex + 1}
+                {t("of")} {table.getPageCount()}
               </strong>
             </span>
             <span className="flex items-center gap-1">
-              | Go to page:
+              {`| ${t("go2page")}`}
               <input
                 type="number"
                 defaultValue={table.getState().pagination.pageIndex + 1}
@@ -392,7 +713,7 @@ export default function BasicTable({
             >
               {[10, 20, 30, 40, 50].map((pageSize) => (
                 <option key={pageSize} value={pageSize}>
-                  Show {pageSize}
+                  {`${t("show")} ${pageSize}`}
                 </option>
               ))}
             </select>

@@ -7,8 +7,11 @@ import { useCourseQuery } from "@src/util/ApiServices";
 import { useRouter } from "next/navigation";
 import CoverOne from "@public/image/cover/cover-01.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Course = () => {
+  const t = useTranslations("Course");
+
   const { data, isSuccess } = useCourseQuery();
   const router = useRouter();
 
@@ -45,7 +48,7 @@ const Course = () => {
 
   return (
     <PageLayout>
-      <Breadcrumb pageName="Course" />
+      <Breadcrumb pageName={t("title")} />
       <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="relative z-20 h-35 md:h-65">
           <Image

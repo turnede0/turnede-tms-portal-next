@@ -91,7 +91,7 @@ export default function TutorDetail(props: PropsType) {
                     Phone No. 1
                   </label>
                   <input
-                    type="text"
+                    type="tel"
                     className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     {...register("info.phone1")}
                   />
@@ -102,7 +102,7 @@ export default function TutorDetail(props: PropsType) {
                     Phone No. 2
                   </label>
                   <input
-                    type="text"
+                    type="tel"
                     className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     {...register("info.phone2")}
                   />
@@ -113,7 +113,7 @@ export default function TutorDetail(props: PropsType) {
                     Whatsapp
                   </label>
                   <input
-                    type="text"
+                    type="tel"
                     className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     {...register("info.whatsapp")}
                   />
@@ -124,7 +124,7 @@ export default function TutorDetail(props: PropsType) {
                     Email
                   </label>
                   <input
-                    type="text"
+                    type="email"
                     className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     {...register("info.email")}
                   />
@@ -161,7 +161,7 @@ export default function TutorDetail(props: PropsType) {
                                     className="flex flex-col gap-5"
                                   >
                                     <div className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-lg my-1 p-3 gap-2">
-                                      {/* Name */}
+                                      {/* Degree */}
                                       <div>
                                         <label className="mb-3 block text-black dark:text-white">
                                           Degree
@@ -175,7 +175,7 @@ export default function TutorDetail(props: PropsType) {
                                           )}
                                         />
                                       </div>
-                                      {/* Name */}
+                                      {/* Period */}
                                       <div>
                                         <label className="mb-3 block text-black dark:text-white">
                                           Period
@@ -235,7 +235,7 @@ export default function TutorDetail(props: PropsType) {
                           </div>
                         )}
                         <button
-                          type="submit"
+                          type="button"
                           className="inline-flex w-full justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-2"
                           //add new empty item from array
                           onClick={() =>

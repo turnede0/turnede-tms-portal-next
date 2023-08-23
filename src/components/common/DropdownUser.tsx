@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import LocaleSwitcher from "@src/components/LocaleSwitcher";
 import { FaLanguage } from "@react-icons/all-files/fa/FaLanguage";
+import { useTranslations } from "next-intl";
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -18,6 +19,8 @@ const DropdownUser = () => {
   const { user } = useUser();
   const { signOut } = useClerk();
   const router = useRouter();
+
+  const t = useTranslations("Header.DropdownUser");
 
   // close on click outside
   useEffect(() => {
@@ -115,7 +118,7 @@ const DropdownUser = () => {
                   fill=""
                 />
               </svg>
-              My Profile
+              {t("myProfile")}
             </Link>
           </li>
           <li>
@@ -136,7 +139,7 @@ const DropdownUser = () => {
                   fill=""
                 />
               </svg>
-              My Contacts
+              {t("myContacts")}
             </Link>
           </li>
           <li>
@@ -161,7 +164,7 @@ const DropdownUser = () => {
                   fill=""
                 />
               </svg>
-              Account Settings
+              {t("accountSettings")}
             </Link>
           </li>
           <li className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out lg:text-base">
@@ -193,7 +196,7 @@ const DropdownUser = () => {
               fill=""
             />
           </svg>
-          Log out
+          {t("logOut")}
         </button>
       </div>
       {/* <!-- Dropdown End --> */}

@@ -7,8 +7,11 @@ import BasicTable from "@src/components/BasicTable";
 import CoverOne from "@public/image/cover/cover-01.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const Schedule = () => {
+  const t = useTranslations("Schedule");
+
   const { data, isSuccess } = useScheduleQuery();
   const router = useRouter();
 
@@ -61,7 +64,7 @@ const Schedule = () => {
 
   return (
     <PageLayout>
-      <Breadcrumb pageName="Schedule" />
+      <Breadcrumb pageName={t("title")} />
       <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="relative z-20 h-35 md:h-65">
           <Image

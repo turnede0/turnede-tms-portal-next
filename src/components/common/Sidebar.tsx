@@ -155,7 +155,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             fill=""
                           />
                         </svg>
-                        Dashboard
+                        {t("dashboard")}
                         <svg
                           className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
                             open && "rotate-180"
@@ -188,7 +188,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             
                               `}
                             >
-                              eCommerce
+                              {t("eCommerce")}
                             </Link>
                           </li>
                         </ul>
@@ -208,7 +208,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   }`}
                 >
                   <FaBook />
-                  Course
+                  {t("course")}
                 </Link>
               </li>
               <li>
@@ -219,7 +219,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   }`}
                 >
                   <FaList />
-                  Schedule
+                  {t("schedule")}
                 </Link>
               </li>
               {/* <!-- Menu Item Schedule --> */}
@@ -246,7 +246,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       fill=""
                     />
                   </svg>
-                  Calendar
+                  {t("calendar")}
                 </Link>
               </li>
               {/* <!-- Menu Item Calendar --> */}
@@ -260,7 +260,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   }`}
                 >
                   <BsPeopleFill />
-                  Tutor
+                  {t("tutor")}
                 </Link>
               </li>
               {/* <!-- Menu Item Tutor --> */}
@@ -290,7 +290,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       fill=""
                     />
                   </svg>
-                  Profile
+                  {t("profile")}
                 </Link>
               </li>
               {/* <!-- Menu Item Profile --> */}
@@ -347,7 +347,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             fill="white"
                           />
                         </svg>
-                        Forms
+                        {t("forms")}
                         <svg
                           className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
                             open && "rotate-180"
@@ -380,7 +380,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                 "group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white "
                               }
                             >
-                              Form Elements
+                              {t("formElements")}
                             </Link>
                           </li>
                           <li>
@@ -390,7 +390,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                 "group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white "
                               }
                             >
-                              Form Layout
+                              {t("formLayout")}
                             </Link>
                           </li>
                         </ul>
@@ -440,7 +440,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       </clipPath>
                     </defs>
                   </svg>
-                  Settings
+                  {t("settings")}
                 </Link>
               </li>
               {/* <!-- Menu Item Settings --> */}

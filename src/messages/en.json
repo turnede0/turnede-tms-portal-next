@@ -7,11 +7,93 @@
     "label": "Change language",
     "locale": "{locale, select, zh {繁體中文} en {English} other {Unknown}}"
   },
-
   "Index": {
     "title": "Hello world!!"
   },
+  "Header": {
+    "searchBar": "Type to search...",
+    "notification": "Notification",
+    "DropdownUser": {
+      "myProfile": "My Profile",
+      "myContacts": "My Contacts",
+      "accountSettings": "Account Settings",
+      "logOut": "Log Out"
+    }
+  },
   "Sidebar": {
-    "menu": "MENU"
+    "menu": "MENU",
+    "dashboard": "Dashboard",
+    "eCommerce": "eCommerce",
+    "course": "Course",
+    "schedule": "Schedule",
+    "calendar": "Calendar",
+    "tutor": "Tutor",
+    "profile": "Profile",
+    "forms": "Forms",
+    "formElements": "Form Elements",
+    "formLayout": "Form Layout",
+    "settings": "Settings"
+  },
+  "DashBoard": {
+    "title": "DashBoard"
+  },
+  "eCommerce": {
+    "title": "eCommerce"
+  },
+  "Course": {
+    "title": "Course"
+  },
+  "Schedule": {
+    "title": "Schedule"
+  },
+  "Calendar": {
+    "title": "Calendar"
+  },
+  "Tutor": {
+    "title": "Tutor"
+  },
+  "Profile": {
+    "title": "Profile"
+  },
+  "Forms": {
+    "title": "Forms"
+  },
+  "FormElements": {
+    "title": "Form Elements"
+  },
+  "FormLayout": {
+    "title": "Form Layout"
+  },
+  "Settings": {
+    "title": "Settings"
+  },
+  "BasicTable": {
+    "search": "Search",
+    "add": "Add",
+    "actions": "Actions",
+    "filter": {
+      "title": "Filter",
+      "field": {
+        "title": "Field",
+        "all": "All"
+      },
+      "condition": {
+        "title": "Condition",
+        "includes": "includes",
+        "excludes": "excludes",
+        "between": "between",
+        "equal": "equal to",
+        "not_equal": "not equal to",
+        "larger": "larger than",
+        "smaller": "smaller than",
+        "larger_equal": "larger than or equal to",
+        "smaller_equal": "smaller than or equal to"
+      },
+      "value": "Value"
+    },
+    "page": "Page",
+    "of": "of",
+    "go2page": "Go to Page",
+    "show": "Show"
   }
 }

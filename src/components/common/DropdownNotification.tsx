@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const DropdownNotification = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef<any>(null);
   const dropdown = useRef<any>(null);
+
+  const t = useTranslations("Header");
 
   useEffect(() => {
     const clickHandler = ({ target }: MouseEvent) => {
@@ -68,7 +71,9 @@ const DropdownNotification = () => {
         }`}
       >
         <div className="px-4.5 py-3">
-          <h5 className="text-sm font-medium text-bodydark2">Notification</h5>
+          <h5 className="text-sm font-medium text-bodydark2">
+            {t("notification")}
+          </h5>
         </div>
 
         <ul className="flex h-auto flex-col overflow-y-auto">

@@ -7,10 +7,94 @@
     "label": "轉換語言",
     "locale": "{locale, select, zh {繁體中文} en {English} other {未知}}"
   },
+
   "Index": {
     "title": "你好"
   },
+  "Header": {
+    "searchBar": "輸入以搜尋...",
+    "notification": "通知",
+    "DropdownUser": {
+      "myProfile": "個人檔案",
+      "myContacts": "聯絡人",
+      "accountSettings": "帳戶設定",
+      "logOut": "登出"
+    }
+  },
   "Sidebar": {
-    "menu": "目錄"
+    "menu": "目錄",
+    "dashboard": "儀表板",
+    "eCommerce": "電子商務",
+    "course": "課堂",
+    "schedule": "時間表",
+    "calendar": "日曆",
+    "tutor": "導師",
+    "profile": "個人資料",
+    "forms": "表單",
+    "formElements": "表單元素",
+    "formLayout": "表單佈局",
+    "settings": "設定"
+  },
+  "DashBoard": {
+    "title": "儀表板"
+  },
+  "eCommerce": {
+    "title": "電子商務"
+  },
+  "Course": {
+    "title": "課堂"
+  },
+  "Schedule": {
+    "title": "時間表"
+  },
+  "Calendar": {
+    "title": "日曆"
+  },
+  "Tutor": {
+    "title": "導師"
+  },
+  "Profile": {
+    "title": "個人資料"
+  },
+  "Forms": {
+    "title": "表單"
+  },
+  "FormElements": {
+    "title": "表單元素"
+  },
+  "FormLayout": {
+    "title": "表單佈局"
+  },
+  "Settings": {
+    "title": "設定"
+  },
+  "BasicTable": {
+    "search": "搜索",
+    "add": "添加",
+    "actions": "行為",
+    "filter": {
+      "title": "過濾",
+      "field": {
+        "title": "類別",
+        "all": "全部"
+      },
+      "condition": {
+        "title": "條件",
+        "includes": "包括",
+        "excludes": "不包括",
+        "between": "之間",
+        "equal": "等於",
+        "not_equal": "不等於",
+        "larger": "大於",
+        "smaller": "少於",
+        "larger_equal": "大於或等於",
+        "smaller_equal": "少於或等於"
+      },
+      "value": "值"
+    },
+    "page": "頁",
+    "of": "之",
+    "go2page": "前往頁面",
+    "show": "顯示"
   }
 }
